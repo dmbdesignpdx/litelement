@@ -1,0 +1,142 @@
+h3,
+h4,
+h5,
+h6,
+ol,
+ul,
+dl,
+menu,
+dd,
+hr,
+pre,
+input,
+select,
+textarea,
+fieldset,
+legend,
+figure,
+blockquote,
+iframe,
+dialog,
+table,
+th,
+td,
+tbody,
+tr,
+tfoot,
+thead,
+colgroup {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+input,
+select,
+progress,
+meter {
+  -moz-appearance: none;  /* Firefox */
+  -webkit-appearance: none;  /* Chrome, Safari */
+  appearance: none;  /* Edge, possibly future? */
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+/* 
+ * Important!
+ * If you plan to keep the above ruleset of ol and/or ul, then the ruleset 
+ * below is needed for VoiceOver in Safari. Otherwise VoiceOver will not 
+ * register the list as a list.
+ */
+li::before {
+  content: '\200B';
+  /* Uncomment if some lists will have list-style */
+  /*
+  position: absolute;
+   */
+}
+
+a,
+abbr {
+  text-decoration: none;
+}
+
+dfn,
+address {
+  font-style: normal;
+}
+
+
+/*
+ * 4. Normalizations
+ */
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+input,
+select,
+button,
+textarea {
+  font: inherit;
+}
+
+details, /* IE, Edge */
+video,
+img,
+object,
+svg,
+iframe,
+embed {
+  display: block;
+}
+
+summary {
+  display: list-item; /* 'block' breaks in Firefox */
+}
+
+
+select,
+[role=button] {
+  cursor: pointer;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.2;
+  text-rendering: geometricPrecision;
+}
+
+
+
+.graphical span {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  overflow: hidden;
+}
+
+
+
+
+/* STYLES */
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+header {
+  block-size: 50vh;
+  display: grid;
+  place-content: center;
+  text-align: center;
+}
+

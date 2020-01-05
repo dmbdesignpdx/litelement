@@ -1,0 +1,148 @@
+@-ms-viewport {
+  width: device-width;
+}
+
+
+body,
+h1,
+h2,
+p,
+button {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+
+html {
+  font: 400 1.125em Roboto, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+}
+
+body {
+  -ms-text-size-adjust: 100%;  /* Edge, IE Mobile */
+  -moz-text-size-adjust: 100%;  /* Firefox Android */
+  -webkit-text-size-adjust: 100%;  /* iOS Safari 5+ */
+  text-size-adjust: 100%;
+  touch-action: manipulation;
+  -webkit-overflow-scrolling: touch;
+  -moz-osx-font-smoothing: grayscale;  /* Firefox Mac OS */
+  -webkit-font-smoothing: antialiased; /* Chrome, Safari Mac OS */
+  -webkit-tap-highlight-color: transparent;
+  -ms-overflow-style: -ms-autohiding-scrollbar; /* Mimic Mac OS for Windows */
+}
+
+
+a {
+  color: inherit;
+}
+
+button {
+  background: none;
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+
+
+h1,
+h2 {
+  line-height: 1.2;
+  text-rendering: geometricPrecision;
+}
+
+p {
+  letter-spacing: 0.01em;
+  line-height: 1.5;
+  -ms-hyphens: none;  /* IE 10+, Edge */
+  -moz-hyphens: none;  /* Firefox < 45 */
+  -webkit-hyphens: none;  /* Safari 5+ */
+  hyphens: none;
+  /* Note: a 'lang' attr has to be defined in the <html> to use hyphens */
+}
+
+
+
+[data-wrap],
+[data-grid] {
+  padding-inline: 18px;
+  margin-inline: auto;
+}
+
+[data-grid] {
+  display: grid;
+  grid: none / repeat(12, 1fr);
+  grid-column-gap: 18px;
+}
+
+/* Phone Landscape */
+@media (min-width:540px) {
+
+}
+
+/* Tablet Portrait */
+@media (min-width:768px) {
+
+  [data-wrap],
+  [data-grid] {
+    padding-inline: 24px;
+  }
+
+  [data-grid] {
+    grid-column-gap: 24px;
+  }
+
+}
+
+/* 
+ * iPhone X, XS, XR, XS Max Landscape
+ * Only if meta viewport content has 'viewport-fit=cover'
+ */
+@media (min-width:810px) and (max-height:416px) {
+  [data-wrap],
+  [data-grid] {
+    padding-inline: env(safe-area-inset-right);
+  }
+}
+
+
+/* Tablet Landscape */
+@media (min-width:1024px) {
+
+}
+
+/* Desktop */
+@media (min-width:1280px) {
+
+  html {
+    font-size: 1.25em;
+  }
+
+  [data-wrap],
+  [data-grid] {
+    inline-size: 84%;
+    max-inline-size: 1436px;
+    padding-inline: 30px;
+  }
+
+  [data-grid] {
+    grid-column-gap: 30px;
+  }
+
+}
+
+/* Large Desktop */
+@media (min-width:1680px) {
+
+  html {
+    font-size: 1.38em;
+  }
+
+}
