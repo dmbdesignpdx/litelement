@@ -1,0 +1,37 @@
+
+@-ms-viewport {
+  width: device-width;
+}
+
+
+/* 
+ * Important!
+ * If you plan to keep the above ruleset of ol and/or ul, then the ruleset 
+ * below is needed for VoiceOver in Safari. Otherwise VoiceOver will not 
+ * register the list as a list.
+ */
+li::before {
+  content: '\200B';
+  /* Uncomment if some lists will have list-style */
+  /*
+  position: absolute;
+   */
+}
+
+html {
+  font: 400 1.125em Roboto, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+}
+
+body {
+  margin: 0;
+  -ms-text-size-adjust: 100%;  /* Edge, IE Mobile */
+  -moz-text-size-adjust: 100%;  /* Firefox Android */
+  -webkit-text-size-adjust: 100%;  /* iOS Safari 5+ */
+  text-size-adjust: 100%;
+  touch-action: manipulation;
+  -webkit-overflow-scrolling: touch;
+  -moz-osx-font-smoothing: grayscale;  /* Firefox Mac OS */
+  -webkit-font-smoothing: antialiased; /* Chrome, Safari Mac OS */
+  -webkit-tap-highlight-color: transparent;
+  -ms-overflow-style: -ms-autohiding-scrollbar; /* Mimic Mac OS for Windows */
+}

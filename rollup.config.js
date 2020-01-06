@@ -18,6 +18,10 @@ export default {
     typescript(),
     dev && livereload(`public`),
     !dev && terser({
+      compress: {
+        drop_console: true,
+        passes: 2,
+      },
       output: {
         comments: false,
       }

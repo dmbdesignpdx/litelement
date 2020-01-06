@@ -1,6 +1,11 @@
 import './layout/head'
-import './layout/root'
+import './layout/site-root'
 
 import './components/site-nav'
-import './components/site-card'
+import './components/card-primary'
 import './components/site-header'
+import './components/site-footer'
+
+
+const ns = document.querySelector(`#remove`)
+ns.parentElement.removeChild(ns)

@@ -1,29 +1,24 @@
-export default ((): void => {
+interface Tag {
+  type: string,
+  [prop: string]: any,
+}
 
-  const tag = (type: string, content: Object): void => {
-    const el = document.createElement(type)
+export const Head = (tags: Array<Tag>): void => {
 
-    Object.keys(content).forEach(key => {
-      const value = content[key]
+  tags.forEach(tag => {
+    const el: HTMLElement = document.createElement(tag.type)
 
-      el.setAttribute(key, value)
+    Object.keys(tag).forEach(key => {
+      if (key !== `type`) {
+        let value = tag[key]
+
+        if (value) {
+          value = ""
+          el.setAttribute(key, value)
+        }
+      }
     })
 
     document.head.appendChild(el)
-  }
-
-
-  /**
-   * TAGS
-   */
-  tag('meta', {
-    name: 'description',
-    content: 'this is the content.',
   })
-
-  tag('meta', {
-    name: 'generator',
-    content: 'me.'
-  })
-
-})()
+}
