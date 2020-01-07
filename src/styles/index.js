@@ -124,7 +124,7 @@ p {
 
 [data-grid] {
   display: grid;
-  grid: none / repeat(12, 1fr);
+  grid: auto-flow / repeat(12, 1fr);
   column-gap: 18px;
 }
 

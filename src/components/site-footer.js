@@ -4,34 +4,35 @@ import {
   css,
   customElement,
   property,
-  CSSResult,
-  TemplateResult,
 } from 'lit-element'
 import { pre } from '../styles'
 
 
-@customElement('site-footer' as string)
+const styles = css`
+  :host {
+    display: block;
+    margin-block-start: 10vh;
+    background: #EEE;
+  }
+
+  footer {
+    padding-block: 60px 90px;
+  }
+`
+
+
+@customElement('site-footer')
 export class SiteFooter extends LitElement {
 
   @property({ type: String })
   home = `/home`
 
-  static styles: Array<CSSResult> = [
+  static styles = [
     pre,
-    css`
-      :host {
-        display: block;
-        margin-block-start: 10vh;
-        background: #EEE;
-      }
-
-      footer {
-        padding-block: 60px 90px;
-      }
-    `
+    styles,
   ]
 
-  render(): TemplateResult {
+  render() {
     return html`
       <footer data-wrap>
         <a href=${this.home}>Home</a>
