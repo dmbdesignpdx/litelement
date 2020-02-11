@@ -31,7 +31,7 @@ const buildCrit = () => (
 const watchCrit = () => {
   gulp.watch([
     crit.src,
-  ], gulp.series(buildCrit, injectCrit))
+  ], build)
 }
 
 
@@ -47,6 +47,12 @@ const injectCrit = () => (
     .pipe(gulp.dest(`./public`))
 )
 
+const copyData = () => (
+  gulp.src(`./src/data/**/*.json`)
+    .pipe(gulp.dest(`./public/data`))
+)
 
-exports.build = gulp.series(buildCrit, injectCrit)
-exports.watch = gulp.series(buildCrit, injectCrit, watchCrit)
+const build = gulp.series(buildCrit, injectCrit, copyData)
+
+exports.build = build
+exports.watch = gulp.series(buildCrit, injectCrit, copyData, watchCrit)
