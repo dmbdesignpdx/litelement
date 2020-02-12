@@ -1,6 +1,6 @@
-import { css } from 'lit-element'
+import { css, CSSResult } from 'lit-element';
 
-export const pre = css`
+export const pre: CSSResult = css`
 h1,
 h2,
 h3,
@@ -118,8 +118,10 @@ p {
 
 [data-wrap],
 [data-grid] {
-  padding-inline: 18px;
-  margin-inline: auto;
+  padding-inline-start: 18px;
+  padding-inline-end: 18px;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
 }
 
 [data-grid] {
@@ -136,7 +138,8 @@ p {
 
   [data-wrap],
   [data-grid] {
-    padding-inline: 24px;
+    padding-inline-start: 24px;
+    padding-inline-end: 24px;
   }
 
   [data-grid] {
@@ -149,7 +152,8 @@ p {
 @media (min-width:810px) and (max-height:416px) {
   [data-wrap],
   [data-grid] {
-    padding-inline: env(safe-area-inset-right);
+    padding-inline-start: env(safe-area-inset-right);
+    padding-inline-end: env(safe-area-inset-right);
   }
 }
 
@@ -168,7 +172,8 @@ p {
   [data-grid] {
     inline-size: 84%;
     max-inline-size: 1436px;
-    padding-inline: 30px;
+    padding-inline-start: 30px;
+    padding-inline-end: 30px;
   }
 
   [data-grid] {
@@ -185,9 +190,9 @@ p {
 
 }
 
-`
+`;
 
-export const helpers = css`
+export const helpers: CSSResult = css`
 .long {
   text-rendering: optimizeSpeed;
 }
@@ -199,9 +204,9 @@ export const helpers = css`
 .nobr {
   white-space: nowrap;
 }
-`
+`;
 
-export const support = css`
+export const support: CSSResult = css`
 @supports (-webkit-app-region:drag) {
 
 }
@@ -217,10 +222,10 @@ export const support = css`
 @supports (-ms-ime-align:auto) {
 
 }
-`
+`;
 
 
-export const os = css`
+export const os: CSSResult = css`
 @media (prefers-reduced-motion:reduce) {
 
 }
@@ -228,5 +233,4 @@ export const os = css`
 @media (prefers-color-scheme:dark) {
 
 }
-`
-
+`;

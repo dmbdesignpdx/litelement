@@ -4,11 +4,13 @@ import {
   css,
   customElement,
   property,
+  CSSResult,
+  TemplateResult,
 } from 'lit-element'
-import { pre } from '../styles'
+import { pre } from '../styles';
 
 
-const styles = css`
+const styles: CSSResult = css`
   :host {
     display: block;
     margin-block-start: 10vh;
@@ -16,27 +18,28 @@ const styles = css`
   }
 
   footer {
-    padding-block: 60px 90px;
+    padding-block-start: 60px;
+    padding-block-end: 90px;
   }
-`
+`;
 
 
 @customElement('site-footer')
 export class SiteFooter extends LitElement {
 
   @property({ type: String })
-  home = `/home`
+  home = `/home`;
 
-  static styles = [
+  static styles: Array<CSSResult> = [
     pre,
     styles,
-  ]
+  ];
 
-  render() {
+  render(): TemplateResult {
     return html`
       <footer data-wrap>
         <a href=${this.home}>Home</a>
       </footer>
-    `
+    `;
   }
 }

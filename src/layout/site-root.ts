@@ -3,21 +3,23 @@ import {
   html,
   css,
   customElement,
-} from 'lit-element'
-import { until } from 'lit-html/directives/until'
+  TemplateResult,
+  CSSResult,
+} from 'lit-element';
+import { until } from 'lit-html/directives/until';
 
-import { pre } from '../styles'
+import { pre } from '../styles';
 
 
-const styles = css``
+const styles: CSSResult = css``;
 
 
 @customElement('site-root')
 export class SiteRoot extends LitElement {
 
-  accent = `🔥`
+  accent: string = `🔥`;
 
-  get hello() { 
+  get hello(): Promise<TemplateResult> { 
     return fetch(`/data/hello.json`)
       .then(res => res.json())
       .then(data => data.map(item =>
@@ -26,27 +28,24 @@ export class SiteRoot extends LitElement {
             .title=${item.title}
             .copy=${item.copy}
           ></card-primary>
-        `  
-      ))
+        `
+      ));
   }
 
-  get hold() {
+  get hold(): TemplateResult {
     return html`
       <card-skeleton></card-skeleton>
       <card-skeleton></card-skeleton>
       <card-skeleton></card-skeleton>
-    `
+    `;
   }
 
-  static get styles() {
-    return [
-      pre,
-      styles,
-    ]
-  }
+  static styles: Array<CSSResult> = [
+    pre,
+    styles,
+  ];
 
-  render() {
-    console.log(this)
+  render(): TemplateResult {
     return html`
       <site-header .emote=${this.accent}></site-header>
 
@@ -58,6 +57,7 @@ export class SiteRoot extends LitElement {
 
       </main>
 
-      <site-footer .home=${"/"}></site-footer>`
+      <site-footer .home=${"/"}></site-footer>
+    `;
   }
 }

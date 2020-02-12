@@ -4,12 +4,14 @@ import {
   css,
   customElement,
   property,
-} from 'lit-element'
+  CSSResult,
+  TemplateResult,
+} from 'lit-element';
 
-import { pre } from '../styles'
+import { pre } from '../styles';
 
 
-const styles = css`
+const styles: CSSResult = css`
   header {
     display: flex;
     block-size: 60vh;
@@ -26,21 +28,21 @@ const styles = css`
   p {
     margin-block-start: 1em;
   }
-`
+`;
 
 
 @customElement('site-header')
 export class SiteHeader extends LitElement {
   
   @property({ type: String })
-  emote = ``
+  emote = ``;
 
-  static styles = [
+  static styles: Array<CSSResult> = [
     pre,
     styles,
-  ]
+  ];
 
-  render() {
+  render(): TemplateResult {
     return html`
       <header
         id="Hero"
@@ -54,6 +56,6 @@ export class SiteHeader extends LitElement {
         <input type="text">
 
       </header>
-    `
+    `;
   }
 }

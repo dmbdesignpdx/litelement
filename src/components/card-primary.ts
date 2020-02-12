@@ -4,22 +4,24 @@ import {
   customElement,
   property,
   css,
-} from 'lit-element'
+  CSSResult,
+  TemplateResult,
+} from 'lit-element';
 
-import { pre } from '../styles'
+import { pre } from '../styles';
 
 
 @customElement(`card-primary`)
 export class CardPrimary extends LitElement {
 
   @property({ type: String })
-  title =  ``
+  title =  ``;
 
   @property({ type: String })
-  copy =  ``
+  copy =  ``;
   
 
-  static styles = [
+  static styles: Array<CSSResult> = [
     pre,
     css`
       :host {
@@ -49,12 +51,12 @@ export class CardPrimary extends LitElement {
     `
   ]
 
-  render() {
+  render(): TemplateResult {
     return html`
       <article>
         <h1>${this.title}</h1>
         <p>${this.copy}</p>
       </article>
-    `
+    `;
   }
 }

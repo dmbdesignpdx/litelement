@@ -3,10 +3,12 @@ import {
   html,
   css,
   customElement,
-} from 'lit-element'
+  CSSResult,
+  TemplateResult,
+} from 'lit-element';
 
 
-const styles = css`
+const styles: CSSResult = css`
   :host {
     display: block;
     grid-column: span 4;
@@ -34,22 +36,22 @@ const styles = css`
     border-radius: 100px;
     background: #AAA;
   }
-`
+`;
 
 
 @customElement('card-skeleton')
 export class CardSkeleton extends LitElement {
 
-  static styles = [
+  static styles: Array<CSSResult> = [
     styles,
-  ]
+  ];
 
-  render() {
+  render(): TemplateResult {
     return html`
       <div data-background>
         <div data-title></div>
         <div data-copy></div>
       </div>
-    `
+    `;
   }
 }

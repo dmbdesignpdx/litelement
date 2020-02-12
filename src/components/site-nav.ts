@@ -4,12 +4,14 @@ import {
   customElement,
   property,
   css,
-} from 'lit-element'
+  CSSResult,
+  TemplateResult,
+} from 'lit-element';
 
-import { pre } from '../styles'
+import { pre } from '../styles';
 
 
-const styles = css`
+const styles: CSSResult = css`
   :host {
     display: block;
     block-size: 90px;
@@ -35,27 +37,27 @@ const styles = css`
   a:first-of-type {
     margin-inline-end: auto;
   }
-`
+`;
 
 
 @customElement('site-nav')
 export class SiteNav extends LitElement {
 
   @property({ type: String })
-  home = `/home`
+  home = `/home`;
 
-  static styles = [
+  static styles: Array<CSSResult> = [
     pre,
     styles,
-  ]
+  ];
 
-  render() {
+  render(): TemplateResult {
     return html`
       <nav data-wrap>
         <a href=${this.home}>Home</a>
         <a href="#">About</a>
         <a href="#">Contact</a>
       </nav>
-    `
+    `;
   }
 }
